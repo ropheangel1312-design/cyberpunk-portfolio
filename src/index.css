@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --cyber-yellow: #FCEE0A;
+    --cyber-yellow-glow: rgba(252, 238, 10, 0.4);
+    --cyber-chrome: #E2E8F0;
+    --cyber-gunmetal: #121620;
+    --cyber-black: #050508;
+    --cyber-alert: #FF1744;
+  }
+
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+    color-scheme: dark;
+    background-color: #050508;
+  }
+
+  /* Custom scrollbar in acid yellow and gunmetal */
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050508;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e2433;
+    border-radius: 1px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FCEE0A;
+  }
+}
+
+/* Cyberpunk Typography System */
+.font-orbitron {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.font-oxanium {
+  font-family: 'Oxanium', sans-serif;
+}
+
+.font-rajdhani {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.font-display {
+  font-family: 'Orbitron', 'Oxanium', sans-serif;
+}
+
+.font-tech {
+  font-family: 'Rajdhani', 'Oxanium', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.font-mono-cyber {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Chrome Text & Surface Treatments */
+.text-chrome {
+  background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 45%, #94A3B8 75%, #CBD5E1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-acid-yellow {
+  color: #FCEE0A;
+  text-shadow: 0 0 12px rgba(252, 238, 10, 0.45);
+}
+
+.border-chrome {
+  border-color: rgba(226, 232, 240, 0.2);
+}
+
+.border-acid-yellow {
+  border-color: #FCEE0A;
+  box-shadow: 0 0 15px rgba(252, 238, 10, 0.25);
+}
+
+.bg-gunmetal {
+  background-color: #090B10;
+}
+
+.bg-gunmetal-card {
+  background: linear-gradient(135deg, rgba(14, 18, 26, 0.95) 0%, rgba(8, 10, 15, 0.98) 100%);
+}
+
+/* Chrome Brushed Metallic Surface */
+.chrome-panel {
+  background: linear-gradient(145deg, #161b26 0%, #0c0f16 50%, #11151f 100%);
+  border: 1px solid rgba(226, 232, 240, 0.15);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 8px 32px rgba(0, 0, 0, 0.8);
+}
+
+/* Cyber cut-corner chamfers */
+.cyber-chamfer {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 14px) 0,
+    100% 14px,
+    100% 100%,
+    14px 100%,
+    0 calc(100% - 14px)
+  );
+}
+
+.cyber-chamfer-lg {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 24px) 0,
+    100% 24px,
+    100% 100%,
+    24px 100%,
+    0 calc(100% - 24px)
+  );
+}
+
+.cyber-chamfer-top {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 16px) 0,
+    100% 16px,
+    100% 100%,
+    0 100%
+  );
+}
+
+.cyber-chamfer-sm {
+  clip-path: polygon(
+    0 0,
+    calc(100% - 8px) 0,
+    100% 8px,
+    100% 100%,
+    8px 100%,
+    0 calc(100% - 8px)
+  );
+}
+
+/* Diagonal Hazard Stripes */
+.hazard-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    #FCEE0A,
+    #FCEE0A 8px,
+    #050508 8px,
+    #050508 16px
+  );
+}
+
+/* Acid Yellow Subtle Scanlines */
+.scanlines {
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0),
+    rgba(255,255,255,0) 50%,
+    rgba(0, 0, 0, 0.35) 50%,
+    rgba(0, 0, 0, 0.35)
+  );
+  background-size: 100% 4px;
+}
+
+/* Cyber grid with acid yellow / gunmetal hints */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(252, 238, 10, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(252, 238, 10, 0.04) 1px, transparent 1px);
+}
+
+.cyber-dots {
+  background-image: radial-gradient(rgba(252, 238, 10, 0.15) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+/* Glitch animation effects */
+@keyframes cyberGlitchFast {
+  0% { transform: translate(0); }
+  20% { transform: translate(-3px, 1px); filter: hue-rotate(90deg); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-2px, -1px); }
+  80% { transform: translate(1px, 2px); }
+  100% { transform: translate(0); filter: none; }
+}
+
+.animate-glitch {
+  animation: cyberGlitchFast 0.28s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes glitchGhost {
+  0% { opacity: 0.8; transform: translate(0); }
+  50% { opacity: 0.2; transform: translate(4px, -1px); }
+  100% { opacity: 0.8; transform: translate(0); }
+}
+
+.glitch-ghost {
+  animation: glitchGhost 2s infinite ease-in-out;
+}
+
+/* 3D Perspective Preservation */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.perspective-1200 {
+  perspective: 1200px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

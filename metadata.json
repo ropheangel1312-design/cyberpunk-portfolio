@@ -1,0 +1,6 @@
+{
+  "name": "Rophe Angel — Night City Breach Portfolio",
+  "description": "Interactive Cyberpunk portfolio of Rophe Angel, Computer Science & Engineering student, builder, and researcher.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
